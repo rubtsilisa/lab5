@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор стоимости заказа</title>
+    <style>
+        /* Стили для красивого отображения калькулятора */
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .calculator {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Заголовок страницы -->
+    <h1>Калькулятор стоимости заказа</h1>
+    
+    <!-- Основной блок калькулятора -->
+    <div class="calculator">
+        <!-- Поле для ввода количества товара -->
+        <div class="form-group">
+            <label for="quantity">Количество товара:</label>
+            <!-- 
+                Текстовое поле для ввода количества
+                type="text" позволяет вводить любые символы, 
+                что требует последующей валидации
+            -->
+            <input type="text" id="quantity" placeholder="Введите количество">
+            <!-- 
+                Блок для отображения ошибок валидации
+                Изначально пустой, заполняется при ошибках ввода
+            -->
+            <div id="quantity-error" class="error"></div>
+        </div>
+        
+        <!-- Выпадающий список для выбора товара -->
+        <div class="form-group">
+            <label for="product">Выберите товар:</label>
+            <!-- 
+                Элемент select с тремя товарами разной цены
+                В value хранится цена товара для удобства расчета
+                В тексте отображается название и цена для пользователя
+            -->
+            <select id="product">
+                <option value="1000">Смартфон - 1000 руб.</option>
+                <option value="500">Наушники - 500 руб.</option>
+                <option value="200">Чехол - 200 руб.</option>
+            </select>
+        </div>
+        
+        <!-- Кнопка для расчета стоимости -->
+        <button id="calculate-btn">Рассчитать стоимость</button>
+        
+        <!-- Блок для отображения результата расчета -->
+        <div id="result"></div>
+    </div>
+
+    <!-- 
+        ПОДКЛЮЧЕНИЕ ВНЕШНЕГО JS-ФАЙЛА
+        Атрибут defer гарантирует выполнение скрипта после полной загрузки DOM
+        Это соответствует требованию задания
+    -->
+    <script src="calculator.js" defer></script>
+</body>
+</html>
