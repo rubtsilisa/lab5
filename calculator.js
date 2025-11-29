@@ -1,8 +1,3 @@
-// calculator.js - ВНЕШНИЙ ФАЙЛ С JavaScript КОДОМ
-
-// ОБРАБОТЧИК СОБЫТИЯ DOMContentLoaded
-// Этот код выполнится только после полной загрузки DOM-дерева
-// Это соответствует требованию инициализации после загрузки DOM
 window.addEventListener('DOMContentLoaded', function() {
     // Логирование для отладки - видим, что DOM готов
     console.log("DOM fully loaded and parsed");
@@ -82,4 +77,5 @@ window.addEventListener('DOMContentLoaded', function() {
         // Используем шаблонную строку для форматирования вывода
         resultDiv.textContent = `Стоимость заказа: ${totalCost} руб.`;
     });
+
 });
